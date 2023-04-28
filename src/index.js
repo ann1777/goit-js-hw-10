@@ -47,6 +47,7 @@ function onSearchInput(event) {
 function clearPageHtml() {
     countryList.innerHTML = '';
     countryInfo.innerHTML = '';
+    searchInput.value = '';
 }
 
 function alertBadCountryName() {
@@ -70,7 +71,6 @@ function addCountriInfo({target}) {
             if(contryName === countries[i].name.official) {
                 clearPageHtml();
 
-                console.log("I am here");
                 countryList.insertAdjacentHTML('beforeend', renderCountryList([countries[i]]));
                 countryInfo.insertAdjacentHTML('beforeend', renderCountryInfo([countries[i]]));
             } 
