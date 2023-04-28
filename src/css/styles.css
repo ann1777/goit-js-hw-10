@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+li {
+  list-style: none;
+}
+
 body {
   text-align: center;
   justify-content: center;
@@ -21,10 +25,8 @@ body {
   margin-bottom: 16px;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+ul.country-list .country-list__item {
+  text-align: left;
 }
 
 li.country-info__item {
@@ -42,12 +44,10 @@ img {
 .country-list__item{
   display: flex;
   align-items: center;
-  /* justify-content: center; */
 }
 
 h2.country-list__name{
   margin-right: auto;
-  /* margin-left: auto; */
 }
 
 .country-list__item:not(:last-child){
