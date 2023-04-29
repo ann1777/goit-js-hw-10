@@ -10,6 +10,7 @@ const searchInput = document.querySelector('input#search-box');
 const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 const countryListItem = document.querySelector('.country-list_name');
+const renderCountryFlag = document.querySelector('.country-list__flag');
 
 searchInput.addEventListener('input', debounce(onSearchInput, DEBOUNCE_DELAY));
 countryList.addEventListener('click', addCountriInfo);
@@ -47,6 +48,9 @@ function onSearchInput(event) {
 function clearPageHtml() {
     countryList.innerHTML = '';
     countryInfo.innerHTML = '';
+}
+
+function clearInputValue() {
     searchInput.value = '';
 }
 
@@ -70,6 +74,7 @@ function addCountriInfo({target}) {
                 console.log(countries[i].name);
             if(contryName === countries[i].name.official) {
                 clearPageHtml();
+                clearInputValue();
 
                 countryList.insertAdjacentHTML('beforeend', renderCountryList([countries[i]]));
                 countryInfo.insertAdjacentHTML('beforeend', renderCountryInfo([countries[i]]));
